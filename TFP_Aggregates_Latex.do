@@ -104,13 +104,13 @@ cap program drop tfp_aggregates
                         * Beverages has jumps to around 300 points without restrictions
                     forv i = 0/2 { 
                         replace tfp_`estimator'_`i' = `estimator'_pv_`sh'_95_`i' if isic4_str=="11"
-                        * Apparell drops by 14 points and immediately recovers, all of this is in d, indicating it is likely a sample thing
+                        * Apparell drops by 14 points and immediately recovers, all of this is in d, indicating it is likely a sample issue
                         replace tfp_`estimator'_`i' = `estimator'_pv_`sh'_95_`i' if isic4_str=="14"
-                        * Wood Drops to 77 from a high of 125 near the end of the  sample the standard 95 numbers seem inplasabile compared to previous findings
+                        * Wood Drops to 77 from a high of 125 near the end of the  sample the standard 95 numbers seem implausible compared to previous findings
                         replace tfp_`estimator'_`i' = `estimator'_pv_`sh'_t95_`i' if isic4_str=="16"
-                        * printing drops by around 20 points in a year, again likely a sample thing
+                        * printing drops by around 20 points in a year, again likely a sample issue
                         replace tfp_`estimator'_`i' = `estimator'_pv_`sh'_t95_`i' if isic4_str=="18"
-                        * Petroleum drops bby 40 points in a single year, looks like a pretty persistent sample thing
+                        * Petroleum drops bby 40 points in a single year, looks like a similar sampling issue. 
                         replace tfp_`estimator'_`i' = `estimator'_pv_`sh'_t95_`i' if isic4_str=="19"
                         * Other transport jumps pretty substantially (can be above 2000) if not taken care of
                         replace tfp_`estimator'_`i' = `estimator'_pv_`sh'_t95_`i' if isic4_str=="30"
