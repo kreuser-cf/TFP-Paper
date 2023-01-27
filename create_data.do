@@ -99,7 +99,6 @@ cap program drop internal_sum_stats
 		restore
 	end
 cap log using "D:\Researchers\Workbenches\epadmin\brink_dane\Productivity\data\log.scml", replace
-/* FK: WHERE DOES THIS DATASET COME FROM?? WE NEED THE CODE FOR THIS TOO */
 
 local id = "taxrefno"
 local year = "taxyear"
@@ -210,7 +209,7 @@ local rows  = 0
         save "`saveadr'\\industries", replace 
     restore
 
-* This seems to have been done upstairs 
+* This is done upstairs 
     keep if isic4!=. 
     keep if manuf_coverage>.5
 
